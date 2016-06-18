@@ -7,6 +7,12 @@ var doc;
 
 function Setup() {
 	doc = document.getElementById("code");
+	/*var editor = CodeMirror.fromTextArea(document.getElementById("editor_textarea"), {
+	  lineNumbers: true
+	  mode: "text/javascript",
+	  matchBrackets: true
+	});*/
+
 }
 
 socket.onmessage = function(data) {
@@ -14,6 +20,7 @@ socket.onmessage = function(data) {
 	console.log("Received packet from server");
 	//console.log(data);
 	dataStr = dataStr.replace(/(\r\n|\n|\r)/gm, "<br />");
+	//dataStr = dataStr.replace(/(")/gm, "");
 	dataStr = dataStr.replace(/(\t)/gm, "&nbsp;&nbsp;&nbsp;&nbsp;");
 	doc.innerHTML = dataStr;
-}
+}  

@@ -5,17 +5,23 @@
 		<title>Class.room</title>
 		
 		<!-- External Styles -->
-		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<link rel="stylesheet" type="text/css" href="styles/main.css"/>
 
 		<!-- External Scripts -->
 		<script type="text/javascript" src="scripts/socket.js"></script>
+
+		<!-- External Libraries -->
+		<script type="text/javascript" src="libraries/codemirror.js"></script>
+		<link rel="stylesheet" type="text/css" href="libraries/codemirror.css"/>
+		<script type="text/javascript" src="libraries/modes/javascript/javascript.js"></script>
 
 	</head>
 	<body onload="Setup()">
 		<div id="container">
 			<h1>Class.room</h1>
 			<hr>
-			<div class="code" id="code"></div>
+			<div id="code" class="code">
+			</div>			
 		</div>
 	</body>
 </html>
