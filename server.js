@@ -7,8 +7,8 @@ var express = require('express');
 var SERVER_IP = ipLib.address();
 
 // -- Server Variables
-var Students = [];
-var Teacher;
+var WebClients = [];
+var Broadcaster;
 
 // ============== Express Server ============== //
 var webServerPort = 8000;
@@ -29,7 +29,13 @@ var inetPort = 5000;
 var inetServer = net.createServer(function(sublime_socket) {
 	//Client from sublime package has joined
 	sublime_socket.on('data', function(data) {
-		console.log("Net Server recieved data: " + data.toString());
+		//console.log("Net Server recieved data: " + data.toString());
+		console.log("Net Server recieved data");
+		console.log("Sending data to Web Clients");
+		for(var i = 0; i < WebClients.length; ++i)
+		{
+			WebClients[i].send(data.toString());
+		}
 	});
 });
 inetServer.listen(inetPort);
@@ -53,7 +59,18 @@ inetServer.on('close', function() {
 var WebSocketServer = require('ws').Server;
 var wss = new WebSocketServer( { server : webServer });
 
+wss.on('listening', function() {
+	console.log("Started WSS Server at: http://%s:%s", SERVER_IP, webServerPort);
+})
+
 wss.on('connection', function(client_socket) {
 	//Client from webpage has joined
+	console.log("WS  Server received new connection");
+	var idx = WebClients.length;
+	WebClients.push(client_socket);
+
+	client_socket.on('close', function() {
+		WebClients.splice(idx, 1);
+	})
 });
 

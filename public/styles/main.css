@@ -1,0 +1,13 @@
+body {
+	margin: 0;
+	background-color: #eee;
+}
+
+#container {
+	margin: 0 auto;
+	width: 80%;
+}
+
+.code {
+	font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
+}
