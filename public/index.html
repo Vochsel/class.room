@@ -14,14 +14,23 @@
 		<script type="text/javascript" src="libraries/codemirror.js"></script>
 		<link rel="stylesheet" type="text/css" href="libraries/codemirror.css"/>
 		<script type="text/javascript" src="libraries/modes/javascript/javascript.js"></script>
+		<script type="text/javascript" src="libraries/modes/htmlembedded/htmlembedded.js"></script>
+		<script type="text/javascript" src="libraries/modes/htmlmixed/htmlmixed.js"></script>
+		<script type="text/javascript" src="libraries/modes/xml/xml.js"></script>
+		<script type="text/javascript" src="libraries/modes/css/css.js"></script>
+		<script type="text/javascript" src="libraries/modes/python/python.js"></script>
+		 
+		<!-- External Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 
 	</head>
 	<body onload="Setup()">
 		<div id="container">
 			<h1>Class.room</h1>
 			<hr>
-			<div id="code" class="code">
-			</div>			
+			<ul id="file_nav">
+			</ul>
+			<textarea rows="100" id="code" class="code">//Code Will Show up here</textarea>
 		</div>
 	</body>
 </html>

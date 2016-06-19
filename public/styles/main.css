@@ -1,13 +1,58 @@
 body {
 	margin: 0;
 	background-color: #eee;
+	font-family: 'Roboto Slab', serif;
 }
 
 #container {
 	margin: 0 auto;
 	width: 80%;
+	height: 100%; 
+
+}
+
+#file_nav {
+	font-family: Arial;
 }
 
 .code {
 	font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
+	height: 100%; 
+}
+
+h1 {
+	font-size: 5vw;
+	margin: 0;
+}
+
+ul {
+	margin-bottom: 0.5vw;
+}
+
+li {
+	list-style: none;
+	display: inline;
+	background-color: #ddd;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-bottom: 0.5vw;
+	padding-top: 0.5vw;
+	color: #333;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border: solid thin #777;
+	border-bottom: none;
+	/*border-radius: 5px;*/
+	
+	cursor: pointer;
+	transition: 0.5s background-color;
+}
+
+li:hover {
+	background-color: #777;
+}
+
+.CodeMirror {
+	border: solid thin #777;
+	width: 100%;
 }
